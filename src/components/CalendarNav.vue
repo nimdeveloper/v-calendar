@@ -25,7 +25,9 @@
         @click="toggleMode"
         @keydown="e => onSpaceOrEnter(e, toggleMode)"
       >
-        {{ title }}
+        <slot name="popover-select-header" :title="title" :monthMode="monthMode">
+          {{ title }}
+        </slot>
       </span>
       <!--Move next button-->
       <span
@@ -54,7 +56,9 @@
         @click="item.click"
         @keydown="e => onSpaceOrEnter(e, item.click)"
       >
-        {{ item.label }}
+        <slot name="popover-select-item" :listItem="item" :monthMode="monthMode">
+          {{ listItem.label }}
+        </slot>
       </span>
     </div>
   </div>
