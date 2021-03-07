@@ -16,7 +16,8 @@
     "build:popover-row": "vue-cli-service build --no-clean --target lib --dest lib/components --name popover-row src/components/PopoverRow.vue",
     "deploy:docs": "vuepress build docs && netlify deploy",
     "dev": "vuepress dev docs",
-    "test": "vue-cli-service test:unit --watch"
+    "test": "vue-cli-service test:unit --watch",
+    "postinstall": "yarn build"
   },
   "main": "lib/v-calendar.umd.min.js",
   "files": [
